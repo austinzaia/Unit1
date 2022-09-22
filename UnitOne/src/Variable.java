@@ -2,28 +2,28 @@
 public class Variable {
 	String name;
 	String type;
-	
+
 	public Variable(String name, String type) {
 		this.name = name;
 		this.type = type;
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getType() {
 		return this.type;
 	}
-	
-	public void setType (String type) {
+
+	public void setType(String type) {
 		this.type = type;
 	}
-	
+
 	public int getBits() {
 		int byteSize = 8;
 		if (type.equals("byte")) {
@@ -42,6 +42,7 @@ public class Variable {
 			return byteSize * 2;
 		} else if (type.equals("boolean")) {
 			return 1;
-		} else return 0;
+		} else
+			return 0;
 	}
 }

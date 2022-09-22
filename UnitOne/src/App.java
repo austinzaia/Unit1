@@ -9,15 +9,16 @@ public class App {
 		String input = "";
 		Scanner scanner = new Scanner(System.in);
 		List<Variable> vList = new ArrayList<Variable>();
-		
+
 		while (!input.equals("}")) {
-			System.out.println("Declare a variable, please make sure to follow the <type> <name> syntax. Enter } to quit.");
+			System.out.println(
+					"Declare a variable, please make sure to follow the <type> <name> syntax. Enter } to quit.");
 			input = scanner.nextLine();
 			if (!input.equals("}")) {
 				StringTokenizer vars = new StringTokenizer(input);
 				String type = vars.nextToken(" ");
 				String name = vars.nextToken(" ");
-				
+
 				Variable variable = new Variable(name, type);
 				vList.add(variable);
 			}
@@ -28,13 +29,13 @@ public class App {
 		System.out.println("Total Bits: " + getTotalBits(vList));
 
 	}
-	
+
 	public static void printVariableNames(List<Variable> v) {
 		for (Variable vars : v) {
 			System.out.println(vars.getName());
 		}
 	}
-	
+
 	public static int getTotalBits(List<Variable> v) {
 		int totalBits = 0;
 		for (Variable vars : v) {
